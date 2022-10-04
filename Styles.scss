@@ -1,0 +1,389 @@
+/*Layout*/
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.full-height{
+    min-height: 100vh;       
+}
+
+.astronaut {
+    background-color: rgb(180, 103, 8);
+}
+
+/* Button Menu */
+.menu {
+    position: absolute;
+    margin-right: 1rem;
+}
+.menubutton {
+    position: fixed;
+    background-color: transparent;
+    border: none;  
+    width: 35px;
+    height: 35px;
+    right: 20px;
+    top: 20px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+button span {
+    width: 25px;
+    height: 3.5px;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    display: block;
+    background-color: black;
+    position: relative;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+input {
+    cursor: pointer; 
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    opacity: 0;    
+    z-index: 2;
+}
+
+button span:nth-child(2) {
+    position: relative;
+    right: 3px;
+}
+
+button:hover span:nth-child(2) {
+    right: 0px;
+    display:block;
+}
+
+input:checked + .menu nav {
+    visibility: visible;
+    opacity: 1;
+}
+
+nav {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100vw;
+    height: 100vh;  
+    opacity: 0;    
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    visibility: hidden;
+    z-index: 1;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    font-size: 60px;
+    font-weight: 800;
+}
+
+
+/*Astronaut*/
+.astronaut {
+    background-image: url(../img/astronaut.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    display: flex;
+}
+.astronaut .heading-box {
+    border: 4px solid black;
+    width: 10rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    padding: 20px;
+    font-family: 'Rubik', sans-serif;
+
+}
+.astronaut .heading-box .text {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+
+}
+
+
+/*Venture*/
+.venture {
+    background-image: url(../img/stars.jpg);    
+    background-size: cover; 
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    color: rgb(255, 255, 255);
+    display: flex;
+}
+
+.space-ventures {
+    text-shadow:2px 2px 10px #000000;
+    margin-top: 5rem;
+    margin-left: 3.5rem;
+    h2 {        
+        span:first-of-type {
+            display: block;
+            position: relative;
+            z-index: 1;
+            font-size: 5rem;
+        }
+        span:nth-of-type(2) {
+            position: relative;
+            opacity: 0.8;
+            top: -67px;
+            left: 78px;
+            color: rgb(226, 224, 224);
+            font-size: 6.3rem;
+            z-index: 0;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+    }
+}
+
+.groundcontrol-heading {
+    font-size: 1.8rem;
+    margin-left: 3rem;
+    position: absolute;
+    top: 16rem;
+}
+
+.groundcontrol-text {
+    font-size: 0.89rem;
+    margin-left: 3rem;
+    width: 32.3rem;
+    height: 10rem;
+    line-height: 1.6;
+}
+
+blockquote {    
+    font-style: italic;
+    font-size: 1.2rem;
+    text-align: left;
+    position: absolute; 
+    line-height: 1.6;
+
+    width: 24rem;
+    margin-top: 2rem;
+    display: block;
+    margin-left: 6rem;
+
+    display: inline;    
+    &::before, &::after {
+        content:'"';
+        display: block;
+        position: absolute;
+        font-size: 2rem;
+    }
+    &::before {
+        top: -10px;
+        left: -13px;        
+    }
+    &::after {
+        bottom: -12px;
+        right: 293px;
+    }
+}
+
+.tincan {
+    line-height: 1.6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 0.89rem;
+    width: 32.3rem;
+    position: absolute;
+    left: 3rem;   
+    top: 38rem;
+    margin-bottom: 1rem;
+}
+
+.big-quote {
+    display: none;
+}
+
+.majortom {
+    display: none;
+}
+
+.footer {
+    display: none;
+}
+.link2 {
+    color: #D200A2;
+    padding-bottom: 20px;
+}
+
+.cookie {
+    color: #D200A2;
+    font-family: 'Rubik', sans-serif;
+    text-align: left;
+    text-shadow: 0 0 10px #D200A2, 0 0 20px #D200A2, 0 0 30px #D200A2;
+    margin-right: 130px;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+/*Desktop*/
+@media screen and (min-width: 800px) {     
+    .astronaut .heading-box {
+        width: 15rem;
+    }
+    .astronaut .heading-box .link {
+        text-align: right;
+    }
+    .astronaut .heading-box .link span{
+        position: relative;
+        left: 0px;
+        transition: left 0.6s ease-in-out;
+    }
+    .astronaut .heading-box .link span:hover {        
+        left: 10px;
+    }       
+    .venture {    
+        background: url(../img/stars2.jpg);    
+        background-size: cover;
+        background-position: 50% 50%;
+        display: flex;            
+    } 
+    
+    .venture .rightside {
+        padding-left: 10rem;
+        max-width: 40%;
+
+    }
+    .space-ventures {
+        text-shadow:2px 2px 10px #000000;
+        margin-top: 5rem;
+        margin-left: 5rem;
+        h2 {        
+            span:first-of-type {
+                display: block;
+                position: relative;
+                z-index: 1;
+                font-size: 7.7rem;
+            }
+            span:nth-of-type(2) {
+                position: relative;
+                opacity: 0.8;
+                top: -83px;
+                left: 5px;
+                color: rgb(226, 224, 224);
+                font-size: 10rem;
+                z-index: 0;
+                font-family: 'Times New Roman', Times, serif;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .big-quote {
+        position: relative;
+        opacity: 0.8;
+        width: 30rem;
+        margin-left: 2rem;
+        margin-top: 10rem;
+        display: block;
+        background: #39274D;
+        background: linear-gradient(to right, #39274D 0%, #8C6B78 50%, #39274D 100%);
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent;
+        font-size: 3rem;
+        text-align: left;        
+    }
+    blockquote {        
+        top: 40rem;
+        position: absolute;
+        margin-left: 8rem;
+        width: 24rem;  
+        font-size: 20px;
+    }
+
+    .groundcontrol-heading {
+        position: absolute;
+        top: 25rem;
+        margin-left: 5rem;
+
+    }
+
+    .groundcontrol-text {
+        position: relative;
+        padding-top: 1rem;
+        margin-left: 5rem;
+        font-size: 1rem;
+
+    }
+
+    .tincan {
+        position: relative;
+        top: 1.5rem;
+        
+    }
+
+    .majortom {
+        
+        display: block;
+        width: 100px;
+        height: auto;
+        float: right;
+        transform: rotate(3deg);
+    }    
+
+    .footer {    
+        display: block;
+        position: fixed;
+        bottom: 0;
+        width: 100%;  
+        height: 2rem;  
+        padding: 20px;
+        background-color: rgb(12, 12, 107);
+        z-index: 1;
+    }
+ 
+    .accept {       
+        position: absolute;
+        right: 60px;   
+        bottom: center; 
+        border: 0;
+        background-color: rgb(20, 20, 180);
+        color: white;
+        width: 80px;
+        height: 40px;
+        border: transparent;
+        cursor: pointer;
+    }
+
+    .link2 {
+        color: #D200A2;
+    }
+    .link2 span{
+            position: relative;
+            left: 0px;
+            transition: left 0.6s ease-in-out;
+        }
+    .link2 span:hover {        
+            left: 10px;
+        }
+
+}
+
+
+/*Darkmode*/
